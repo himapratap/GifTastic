@@ -1,0 +1,36 @@
+body{
+  background-image: url('../images/bg2.jpg');
+  font-family: "Comic Sans MS", cursive, sans-serif	;
+
+}
+
+
+/*.display{
+  padding: 10px;
+  overflow: auto;
+   }*/
+
+
+.display{
+  border : none;
+  background-color: rgba(191, 250, 255,0.2);
+ }
+
+label{
+  color: #449D44;
+}
+ .buttonArea{
+   border : none;
+   background-color:rgba(191, 250, 255,0.2);
+  }
+
+.addArea{
+  border : none;
+  background-color:rgba(191, 250, 255,0.2);
+
+}
+
+img{
+  width: 120px;
+  height: auto;
+}
