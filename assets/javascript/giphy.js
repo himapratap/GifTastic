@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var myUrl = 'http://api.giphy.com/v1/gifs/search?q=tom+jerry&api_key=dc6zaTOxFJmzC&limit=10';
+    var myUrl = 'https://api.giphy.com/v1/gifs/search?q=tom+jerry&api_key=dc6zaTOxFJmzC&limit=10';
     $.ajax({
         url: myUrl,
         method: 'GET'
