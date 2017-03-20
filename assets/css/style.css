@@ -19,7 +19,7 @@ body{
 label{
   color: #449D44;
 }
- .buttonArea{
+ .well{
    border : none;
    background-color:rgba(191, 250, 255,0.2);
   }
@@ -28,6 +28,10 @@ label{
   border : none;
   background-color:rgba(191, 250, 255,0.2);
 
+}
+
+.cartoonButton{
+  margin :10px;
 }
 
 img{
