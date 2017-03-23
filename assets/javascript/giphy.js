@@ -32,6 +32,7 @@ $(document).ready(function() {
                 console.log('retrieved the gifs for ' + name);
                 var data = response.data;
                 $('.display').empty();
+
                 var row = $("<div class= 'row'>");
 
                 for (var i = 0; i < data.length; i++) {
@@ -56,6 +57,9 @@ $(document).ready(function() {
 
 
                 }
+                $('html, body').animate({
+                    scrollTop: $(".display").offset().top
+                }, 1000);
 
                 console.log(response);
             }
