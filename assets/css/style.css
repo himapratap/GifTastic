@@ -1,7 +1,7 @@
-body{
-  background-image: url('../images/bg2.jpg');
-  font-family: "Comic Sans MS", cursive, sans-serif	;
-
+body {
+    background-image: url('../images/bg4.jpg');
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-size: cover;
 }
 
 
@@ -10,31 +10,59 @@ body{
   overflow: auto;
    }*/
 
-
-.display{
-  border : none;
-  background-color: rgba(191, 250, 255,0.2);
- }
-
-label{
-  color: #449D44;
-}
- .well{
-   border : none;
-   background-color:rgba(191, 250, 255,0.2);
-  }
-
-.addArea{
-  border : none;
-  background-color:rgba(191, 250, 255,0.2);
-
+.btn-round {
+    border-radius: 17px;
 }
 
-.cartoonButton{
-  margin :10px;
+.display {
+    border: none;
+    /* background-color: rgba(191, 250, 255,0.2);*/
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 30px 10px;
 }
 
-img{
-  width: 120px;
-  height: auto;
+label {
+    color: #449D44;
+}
+
+.well {
+    border: none;
+    background-color: rgba(191, 250, 255, 0.2);
+}
+
+.addArea {
+    border: none;
+    background-color: rgba(191, 250, 255, 0.2);
+    padding: 10px;
+}
+
+.cartoonButton {
+    margin: 10px;
+}
+
+img {
+    width: 250px;
+    height: auto;
+}
+
+.btn{
+  background-color:#0094FF;
+}
+.imgBox {
+    padding: 30px;
+}
+
+.logo img {
+    background-image: url('assets/images/logo2.png');
+    background-size: cover;
+
+}
+
+.logo{
+    margin : 0px auto;
+
+}
+
+.container {
+    margin-bottom: 30px;
 }

@@ -1,4 +1,4 @@
-var cartoons = ['bluto','popeye', 'tom and jerry' , 'scooby-doo', 'the simpsons'];
+var cartoons = ['tom and jerry', 'bluto', 'popeye', 'scooby-doo'];
 $(document).ready(function() {
 
 
@@ -30,21 +30,28 @@ $(document).ready(function() {
         }).done(
             function(response) {
                 console.log('retrieved the gifs for ' + name);
-
-                $('.display').empty();
                 var data = response.data;
+                $('.display').empty();
+                var row = $("<div class= 'row'>");
+
                 for (var i = 0; i < data.length; i++) {
 
                     if (data[i].rating !== "r" && data[i].rating !== "pg-13") {
                         var gify = data[i].images.fixed_height.url;
                         var still = data[i].images.fixed_height_still.url;
 
-                        var gifyImg = $('<img class="col-sm-6 gify">');
+                        var gifyImg = $('<img class="gify">');
                         gifyImg.data("still", still);
-                        gifyImg.data("animate",gify);
+                        gifyImg.data("animate", gify);
                         gifyImg.data("state", "animate");
                         gifyImg.attr('src', gify);
-                        $('.display').append(gifyImg);
+                        var imgBox = $('<div class = "imgBox col-sm-6">');
+                        imgBox.append(gifyImg);
+                        if (i % 2 == 0) {
+                            row = $("<div class= 'row'>");
+                        }
+                        row.append(imgBox)
+                        $('.display').append(row);
                     }
 
 
@@ -59,27 +66,32 @@ $(document).ready(function() {
     $('.add').click(function(event) {
         //prevent default behaviour of submit[add] button
         event.preventDefault();
-        var name = $('#cartoonName').val();
-        console.log('new button to be added' + name);
-        cartoons.push(name);
-        renderButtons();
+        var name = $('#cartoonName').val().trim();
+        if (name != "") {
+            console.log('new button to be added' + name);
+            cartoons.push(name);
+            $('#cartoonName').val("");
+            renderButtons();
+        }
+
+
 
     });
 
-    function changeState(){
-      console.log('changing my state..');
-      var state = $(this).data('state');
-      if ( state == 'animate'){
-        $(this).attr('src', $(this).data('still'));
-        $(this).data('state', 'still');
-      }else{
-        $(this).attr('src', $(this).data('animate'));
-        $(this).data('state', 'animate');
-      }
+    function changeState() {
+        console.log('changing my state..');
+        var state = $(this).data('state');
+        if (state == 'animate') {
+            $(this).attr('src', $(this).data('still'));
+            $(this).data('state', 'still');
+        } else {
+            $(this).attr('src', $(this).data('animate'));
+            $(this).data('state', 'animate');
+        }
     }
 
     $(document).on("click", ".cartoonButton", showGif);
-      $(document).on("click", ".gify", changeState);
+    $(document).on("click", ".gify", changeState);
 
     renderButtons();
 });
