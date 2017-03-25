@@ -38,6 +38,7 @@ label {
 
 .cartoonButton {
     margin: 10px;
+    border-radius: 50px;
 }
 
 img {
@@ -54,11 +55,13 @@ img {
 
 .logo img {
     background-size: cover;
-
+    width :120px;
 }
 
 .logo{
     margin : 0px auto;
+    background-color: rgba(164, 237, 229,0.8);//#EA99DD;//#B8FFE9;
+
 
 }
 
